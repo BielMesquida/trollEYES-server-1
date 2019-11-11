@@ -53,6 +53,7 @@ public class FacturaDao implements DaoInterface {
             return -1;
         }
     }
+    
 
     @Override
     public Integer update(BeanInterface oFacturaBeanParam) throws SQLException {
