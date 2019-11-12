@@ -1,33 +1,33 @@
+
 package net.ausiasmarch.bean;
 
 import com.google.gson.annotations.Expose;
 
-public class ItemBean implements BeanInterface{
+public class ItemBean {
+    @Expose
+    private int id;
+    @Expose
+    private int cantidad;
 
-	@Expose
-	int id;
-	@Expose
-	int cantidad;
-	public ItemBean(int id, int cantidad) {
+    public ItemBean(int id, int cantidad) {
         this.id = id;
         this.cantidad = cantidad;
     }
+    
+    public int getId() {
+        return id;
+    }
 
-	public int getCantidad() {
-		return cantidad;
-	}
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
-	}
-	@Override
-	public Integer getId() {
-		return id;
-	}
-	@Override
-	public void setId(Integer id) {
-		this.id = id;
-		
-	}
-	
-	
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
 }

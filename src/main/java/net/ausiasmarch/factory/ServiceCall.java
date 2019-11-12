@@ -31,7 +31,7 @@ public class ServiceCall {
                     break;
                 case "logout":
                     strResult = oUsuarioService.logout();
-                    break;
+                    break;        
                 case "get":
                     strResult = oUsuarioService.get();
                     break;

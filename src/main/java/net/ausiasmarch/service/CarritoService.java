@@ -1,30 +1,29 @@
 package net.ausiasmarch.service;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import com.google.gson.Gson;
 import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import com.google.gson.Gson;
-
 import net.ausiasmarch.bean.ItemBean;
 import net.ausiasmarch.bean.ResponseBean;
-import net.ausiasmarch.connection.ConnectionInterface;
-import net.ausiasmarch.factory.ConnectionFactory;
 import net.ausiasmarch.factory.GsonFactory;
-import net.ausiasmarch.setting.ConnectionSettings;
 
 public class CarritoService {
 
-	HttpServletRequest oRequest = null;
+// API
+//json?ob=carrito&op=add&id=??&cantidad=??
+//json?ob=carrito&op=remove&id=??&cantidad=??
+//json?ob=carrito&op=list
+//json?ob=carrito&op=empty
+//json?ob=carrito&op=buy
 
-	public CarritoService(HttpServletRequest oRequest) {
-		this.oRequest = oRequest;
-	}
+    HttpServletRequest oRequest = null;
 
-	public String add() throws Exception {
+    public CarritoService(HttpServletRequest oRequest) {
+        this.oRequest = oRequest;
+    }
+
+    public String add() throws Exception {
         Gson oGson = GsonFactory.getGson();
         try {
             HttpSession oSession = oRequest.getSession();
@@ -109,4 +108,5 @@ public class CarritoService {
         }
         return -1;
     }
+
 }
